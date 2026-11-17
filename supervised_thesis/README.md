@@ -12,5 +12,4 @@ Students' names are intentionally not shown on the website.
 | `knowledge-graph-memory/` | Dynamic Long-Term Knowledge Graph Management with Reliability-Based Retrieval for Social Robots | 2024/2025 |
 | `multimodal-emotion-recognition/` | Adaptive Multimodal Conversational AI System with Emotion Recognition and Personalized Interaction Strategies | 2025 (draft) |
 
-Note: the thesis PDFs contain the students' names and emails. They are kept here for reference only and are
-not linked from the site; remember that anything in a public repository is still publicly downloadable.
+Note: the thesis PDFs contain the students' personal data, so they are git-ignored and kept only locally.
