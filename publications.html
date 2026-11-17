@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications — Alessio Saladino</title>
+    <meta name="description" content="Publications by Alessio Saladino on LLMs, cognitive architectures and human-robot interaction.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="brand">Alessio Saladino</a>
+            <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="theses.html">Theses</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <h1>Publications</h1>
+            <p>Peer-reviewed papers and preprints. Preprint PDFs are provided for personal use.</p>
+        </div>
+
+        <div class="pub-toolbar">
+            <input type="search" id="pub-search" placeholder="Search by title, author, venue…" aria-label="Search publications">
+            <div id="pub-filters" style="display:flex;gap:6px;flex-wrap:wrap"></div>
+        </div>
+
+        <div id="pub-list"></div>
+        <noscript><p class="pub-empty">Enable JavaScript to see the list of publications.</p></noscript>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <span>&copy; <span id="year">2025</span> Alessio Saladino</span>
+            <span>Sapienza University of Rome</span>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/publications.js"></script>
+    <script>renderPublicationsPage("pub-list");</script>
+</body>
+</html>

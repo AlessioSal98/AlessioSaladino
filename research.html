@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research — Alessio Saladino</title>
+    <meta name="description" content="Research by Alessio Saladino: LLM-based cognitive architectures for social and industrial robots.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="brand">Alessio Saladino</a>
+            <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="theses.html">Theses</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <h1>Research</h1>
+            <p>
+                My research focuses on integrating Large Language Models with social and industrial robotics,
+                with the goal of enhancing the cognitive capabilities of robotic systems. By exploiting these
+                capabilities a robot can adapt its behaviour to the context in which it operates, so that the
+                same cognitive architecture can be applied across multiple domains by changing only the
+                contextual descriptions. I am also interested in combining the common-sense knowledge of
+                LLMs with formal planning, to obtain plans that are both sensible and executable.
+            </p>
+        </div>
+
+        <section class="section prose" id="cognitive-architecture">
+            <h2>A cognitive architecture for Human-Robot Interaction</h2>
+            <p>
+                During the first year of my PhD I developed a cognitive architecture that enhances the
+                interaction capabilities of robots in terms of context-consistency and safety. Its modular
+                structure allows the management of different aspects of a conversation between a human and a
+                robot. Each module is called a <b>Supervisor</b> and handles a specific task:
+            </p>
+            <ul>
+                <li><b>Social Supervisor</b> — ensures that the conversation contains socially acceptable and safe topics.</li>
+                <li><b>Database module</b> — leverages the robot's long-term memory through RAG techniques to provide more accurate and context-consistent responses.</li>
+                <li><b>Functional Supervisor</b> — combines long-term information from memory with the common-sense knowledge of LLMs to assess the safety and feasibility of what is happening.</li>
+                <li><b>Interaction Supervisor</b> — manages the robot's output: what it does, what it says, and the emotions or feedback it displays to the user.</li>
+            </ul>
+
+            <figure>
+                <img src="images/icsr.png" alt="Diagram of the cognitive architecture with its Supervisor modules and long-term memory" loading="lazy">
+                <figcaption>Overview of the cognitive architecture.</figcaption>
+            </figure>
+
+            <p>
+                The architecture reasons at a high level and is <b>robot-agnostic</b>: the only input it needs is
+                a natural-language description of the robot, of the actions it can perform, and of the domain
+                in which it operates. From this description, the Supervisors identify which actions the robot
+                can or cannot perform, given its physical limitations and the safety criteria provided.
+            </p>
+            <p>
+                To evaluate it, we ran a communication test between two robots (NAO and SMARRtino) running the
+                same architecture, which had to reason about their embodiment and explain to each other what
+                they can do with it.
+            </p>
+
+            <div class="video-embed">
+                <iframe src="https://www.youtube.com/embed/-sRd8KjHceA" title="Demo: NAO and SMARRtino dialogue" loading="lazy"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+            <p class="video-fallback">
+                Video not loading? <a href="https://www.youtube.com/watch?v=-sRd8KjHceA" target="_blank" rel="noopener">Watch it on YouTube →</a>
+            </p>
+
+            <p>
+                📄 Related paper:
+                <a href="publications.html#icsr2025">A Cognitive Architecture for Embodied AI based on LLM Common-sense Knowledge</a> (ICSR 2025)
+            </p>
+        </section>
+
+        <section class="section prose" id="industrial">
+            <h2>Natural language programming for industrial robots</h2>
+            <p>
+                I then worked on bringing the architecture into a collaborative/industrial context. Focusing on
+                a use case with a <b>UR5e collaborative robot for dishwashing</b>, I designed the system so that
+                a user with no programming or robotics experience can control the robot using natural language.
+            </p>
+            <p>
+                Thanks to the robot's long-term memory and the reasoning of its Supervisors, the robot can be
+                taught how to perform a task according to specific parameters, and it remembers the execution
+                details of each task — such as the force to apply or the type of movement to use for a
+                specific type of dish. The resulting framework enables a continuous feedback loop: the human
+                observes the robot's behaviour, the robot adapts it according to the human's instructions, and
+                the updated behaviour is stored in memory.
+            </p>
+            <p>
+                📄 Related paper:
+                <a href="publications.html#ecmr2025">A Use Case of Natural Language Programming for Industrial Robots</a> (ECMR 2025)
+            </p>
+        </section>
+
+        <section class="section prose" id="planning">
+            <h2>Common-sense planning under temporal constraints</h2>
+            <p>
+                LLMs can turn natural-language instructions into plans, but when used directly as planners
+                they often produce plans that look coherent yet are not executable: action or object names
+                that don't match the domain, skipped preconditions, or violated ordering constraints. These
+                failures grow quickly as the number of <b>temporal constraints</b> increases ("first do A,
+                never do B until C…").
+            </p>
+            <p>
+                With <b>CoSP-TL</b> we combine the common-sense knowledge of LLMs with formal symbolic
+                planning, using a two-level hierarchical architecture:
+            </p>
+            <ul>
+                <li><b>High-Level Planner</b>: reads the problem and constraints in natural language, encodes the constraints as a linear temporal logic formula over finite traces (LTL<sub>f</sub>) and iteratively refines a natural-language plan, as a sequence of subgoals, until it satisfies the formula.</li>
+                <li><b>Low-Level Planner</b>: grounds each subgoal into executable PDDL and checks it with a symbolic validator. Errors are repaired iteratively, and solved issues are stored in a vector database and reused (RAG) to fix similar errors later.</li>
+            </ul>
+
+            <figure>
+                <a href="images/cosptl.png" target="_blank" rel="noopener" title="Open full-size figure">
+                    <img src="images/cosptl.png" alt="CoSP-TL architecture: High-Level Planner with LTLf checking and Low-Level Planner generating PDDL" loading="lazy">
+                </a>
+                <figcaption>Overview of the CoSP-TL hierarchical architecture.</figcaption>
+            </figure>
+
+            <p>
+                We evaluated CoSP-TL on the <b>LexiCon</b> benchmark in three IPC domains (Blocksworld,
+                Logistics and Sokoban) with 0, 1 and 2 temporal constraints, comparing it with an LLM used
+                directly as a planner. With more constraints the baseline degrades sharply, while CoSP-TL
+                stays stable:
+            </p>
+
+            <div class="table-wrap">
+                <table class="results">
+                    <thead>
+                        <tr><th>Temporal constraints</th><th>LLM-as-planner</th><th>CoSP-TL</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>0</td><td>80%</td><td><b>100%</b></td></tr>
+                        <tr><td>1</td><td>40%</td><td><b>83%</b></td></tr>
+                        <tr><td>2</td><td>23%</td><td><b>83%</b></td></tr>
+                    </tbody>
+                </table>
+                <p class="table-note">
+                    Plans that run on the ground-truth domain and satisfy the LTL<sub>f</sub> constraints.
+                    Small-scale evaluation (ten problems per domain and constraint level).
+                </p>
+            </div>
+
+            <p>
+                📄 Related paper:
+                <a href="publications.html#genplan-cosptl">CoSP-TL: Common Sense Enhanced Planning under Temporal Logic Constraints with LLMs</a> (GenPlan 2026)
+                · <a href="https://github.com/EmanueleMusumeci/CoSP-TL" target="_blank" rel="noopener">Code</a>
+            </p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <span>&copy; <span id="year">2025</span> Alessio Saladino</span>
+            <span>Sapienza University of Rome</span>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

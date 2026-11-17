@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theses — Alessio Saladino</title>
+    <meta name="description" content="Master's and bachelor's theses of Alessio Saladino, and Master's theses he co-supervised.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="brand">Alessio Saladino</a>
+            <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="theses.html">Theses</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <h1>Theses</h1>
+            <p>
+                My own theses, and the Master's theses I have co-supervised on the integration of Large
+                Language Models with robotic systems and Human-Robot Interaction.
+            </p>
+        </div>
+
+        <section class="section" id="my-theses">
+            <h2>My theses</h2>
+
+            <article class="card thesis-card" id="master-thesis">
+                <h3>A Novel Architecture Integrating LLM and Context-Aware Supervisors for Safe Interaction with Social Robots</h3>
+                <div class="meta">Master's thesis · MSc in Artificial Intelligence and Robotics · Sapienza University of Rome · 2024</div>
+                <p>
+                    A framework for safely integrating Large Language Models with a social robot, overcoming
+                    limitations such as hallucinations and bias and preventing ethical and security risks.
+                    Long-term memory is accessed through Retrieval-Augmented Generation (RAG), and LLM-based
+                    Supervisors manage the interaction flow, so that the robot can communicate fluently,
+                    remember past context and user information, and detect and handle dangerous situations.
+                    This work was the starting point of my PhD research.
+                </p>
+                <p class="keywords"><b>Keywords:</b> Large Language Models, Social robots, Safety, Retrieval-Augmented Generation, Long-term memory</p>
+                <div class="pub-links">
+                    <a class="btn btn-sm" href="Tesi.pdf" target="_blank" rel="noopener">PDF</a>
+                </div>
+            </article>
+
+            <article class="card thesis-card" id="bachelor-thesis">
+                <h3>Social Robot and e-Health: Aphel as an Assistant for Patients in Hospital Wards</h3>
+                <div class="meta">Bachelor's thesis · BSc in Computer Science · Università degli Studi di Bari "Aldo Moro" · 2020</div>
+                <p>
+                    An intelligent system that allows hospital patients to communicate with and request support
+                    from the social robot Aphel through IoT technologies. The robot understands the patient's
+                    needs, provides information or assistance and, when necessary, remotely alerts medical staff.
+                </p>
+                <p class="keywords"><b>Keywords:</b> Social robots, e-Health, IoT, Assistive robotics</p>
+            </article>
+        </section>
+
+        <section class="section" id="supervised">
+            <h2>Co-supervised Master's theses</h2>
+
+            <article class="card thesis-card" id="personality-preferences">
+                <h3>Enhancing Human–Robot Interaction with Personality and Individual Preferences</h3>
+                <div class="meta">MSc in Artificial Intelligence and Robotics · Sapienza University of Rome · A.Y. 2024/2025</div>
+                <p>
+                        This thesis presents a human–robot verbal interaction framework that combines natural
+                        language processing with movement control, facial expressions, and real-time visual
+                        perception, enabling a social robot to communicate fluently, respond accurately to
+                        environmental questions, and adapt its physical behavior to the context. While large
+                        language models (LLMs) integrated into robots excel at providing factual information and
+                        executing contextually appropriate actions, they typically avoid expressing opinions,
+                        emotions, or preferences, resulting in neutral and impersonal interactions. To address
+                        this limitation, this work introduces a personality and preference model that allows each
+                        robot to embody a distinct character, such as being more reserved or more extroverted,
+                        and to maintain consistent likes, dislikes, and conversational styles. These traits
+                        influence both verbal and non-verbal communication, ensuring that the robot's behavior
+                        reflects its personality in a coherent and believable manner. By integrating this model
+                        into the multimodal interaction framework, the robot becomes a more engaging, relatable,
+                        and socially present partner, capable of fostering deeper user connection and more
+                        natural long-term interaction.
+                    </p>
+                <p class="keywords"><b>Keywords:</b> Robot personality, Preferences and opinions, LLM, Social robotics</p>
+            </article>
+
+            <article class="card thesis-card" id="active-vision">
+                <h3>Active Vision for Cognitive Human-Robot Interaction (HRI)</h3>
+                <div class="meta">MSc in Artificial Intelligence and Robotics · Sapienza University of Rome · A.Y. 2024/2025</div>
+                <p>
+                        In this thesis, an extension of a human-robot verbal interaction framework is presented
+                        through the integration of visual capabilities. The previous framework has proven
+                        effective in generating responses to user questions that are unbiased, free from
+                        hallucinations, and socially appropriate. It is also able to select suitable robot
+                        movements and facial expressions in line with the context of the interaction. However, a
+                        major limitation emerges: the system lacks awareness of the environment surroundings
+                        beyond what the user provides, what is stored in internal memory, or what is passed at
+                        the code level. This work addresses this issue by enhancing the original structure with
+                        new modules capable of using real-time environmental information to support both
+                        interaction and the understanding of internal state or safety violations. This extension
+                        not only brings significant improvements to the quality of interaction, allowing the
+                        robot to respond more accurately to questions about its environment, but also enhances
+                        its usefulness in everyday tasks involving environmental context, such as object search.
+                        Moreover, it transforms the robot into a more active agent, capable of deciding when to
+                        use the camera to gather additional information or to start a contact with the user,
+                        scanning the environment to identify them when they are not immediately visible.
+                    </p>
+                <p class="keywords"><b>Keywords:</b> Active vision, Proactive HRI, LLM, Object detection</p>
+            </article>
+
+            <article class="card thesis-card" id="knowledge-graph-memory">
+                <h3>Dynamic Long-Term Knowledge Graph Management with Reliability-Based Retrieval for Social Robots</h3>
+                <div class="meta">MSc in Artificial Intelligence and Robotics · Sapienza University of Rome · A.Y. 2024/2025</div>
+                <p>
+                        This study presents an extension of a human-robot verbal interaction framework. The
+                        original framework combines verbal communication with gestures and facial expressions to
+                        enhance the interaction and provides information relying on a static knowledge base.
+                        Although Large Language Models integrated into robots excel at providing factual
+                        information, a static knowledge base limits the establishment of long-term social
+                        relationships. This limitation is addressed through the development of a dynamic
+                        knowledge graph for long-term information storage and organization. In parallel, this
+                        work introduces also an algorithm for the computation of a reliability score to establish
+                        the trustworthiness of information and a mechanism to handle conflicting data during
+                        execution. This extension enhances the overall quality of information retrieval and lays
+                        the foundation for the establishment of long-term social relationship between users and
+                        robots.
+                    </p>
+                <p class="keywords"><b>Keywords:</b> Long-term memory, Knowledge graph, Information reliability, Social robotics</p>
+            </article>
+
+            <article class="card thesis-card" id="llm-movement-emotion">
+                <h3>An Innovative Architecture for Enhancing Social Robot Abilities by Exploiting LLM Processing</h3>
+                <div class="meta">MSc in Artificial Intelligence and Robotics · Sapienza University of Rome · A.Y. 2024/2025</div>
+                <p>
+                        The study presented in this thesis suggests a fresh method to enhance human-robot
+                        interaction. This method improves human-robot communication by using large language
+                        models (LLMs). Apart from facilitating both natural and safe interactions, the created
+                        system combines an innovative smart module in charge of robot movement control. This
+                        module is essential for guaranteeing that the motions of the robot match the context of
+                        the discussion and follow required safety precautions, therefore helping to simplify the
+                        interpretation of interactions. Dynamically controlling these movements, LLMs analyze the
+                        circumstances and make decisions about whether or not to take particular action. Moreover,
+                        a system of facial expressions has been included to improve the robot's capacity for
+                        succinct and unambiguous expression of emotions and intents. Using "breathing"
+                        motions—designed to create delicate, natural movements that give the interface more
+                        fluidity—is another important contribution. Supervisors communicate with each other to
+                        prescribe the actions and emotions to be conveyed, thanks to specific prompts that teach
+                        the robot its social status, making the robot aware of its physical presence and of its
+                        ability to communicate emotions. As a result, the robot feels more lifelike and responsive
+                        to human communication dynamics.
+                    </p>
+                <p class="keywords"><b>Keywords:</b> Embodied LLM, Gesture generation, Facial expressions, Social robotics</p>
+            </article>
+
+            <article class="card thesis-card" id="multimodal-emotion">
+                <h3>Adaptive Multimodal Conversational AI System with Emotion Recognition and Personalized Interaction Strategies</h3>
+                <div class="meta">MSc in Artificial Intelligence and Robotics · Sapienza University of Rome · 2025</div>
+                <p>
+                        This thesis presents the design, implementation, and evaluation of an Adaptive Multimodal
+                        Conversational AI System that integrates real-time emotion recognition with personalized
+                        interaction strategies. The system addresses the fundamental limitation of conventional
+                        conversational agents: their inability to perceive, understand, and adapt to the emotional
+                        states of users during interactions. The proposed architecture employs a three-modality
+                        emotion fusion approach combining visual facial expression analysis, audio speech emotion
+                        recognition, and textual sentiment analysis using a weighted late fusion mechanism. A key
+                        contribution is an Emotional Profiling System based on Exponential Moving Averages, which
+                        distinguishes transient emotional states from persistent personality traits. The thesis
+                        also introduces a learning-based Strategy Selection Engine implementing the Upper
+                        Confidence Bound (UCB1) algorithm to balance exploration of new interaction strategies
+                        with exploitation of known effective approaches, supporting twelve action types such as
+                        empathy probes, validation, humor, and coping strategy suggestions. Face recognition
+                        enables user identification across sessions, a Real-Time Adaptation Tracker monitors
+                        engagement within sessions, and a Timeout-Based Re-Engagement Module proactively
+                        re-engages the user when silence is detected. Experimental evaluation demonstrates the
+                        system's ability to maintain coherent emotionally-aware conversations, adapt strategies
+                        based on user feedback, and provide personalized interactions across multiple sessions.
+                    </p>
+                <p class="keywords"><b>Keywords:</b> Multimodal emotion recognition, Affective computing, Personalization, Conversational AI</p>
+            </article>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <span>&copy; <span id="year">2025</span> Alessio Saladino</span>
+            <span>Sapienza University of Rome</span>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
